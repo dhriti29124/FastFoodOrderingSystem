@@ -6,7 +6,7 @@ typedef struct {
     char name[50];
     char category[20];
     float price;
-    int isAvailable; // 1 = available, 0 = not available
+    int isAvailable; 
 } MenuItem;
 
 typedef struct {
