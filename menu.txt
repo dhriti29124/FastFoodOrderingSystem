@@ -1,0 +1,25 @@
+101 Burger Main 5.99 1
+102 Cheeseburger Main 6.49 1
+103 ChickenBurger Main 6.99 1
+104 VegBurger Main 5.49 1
+
+201 Fries Side 2.99 1
+202 CheeseFries Side 3.49 1
+203 PotatoWedges Side 3.29 1
+
+301 Cola Drink 1.99 1
+302 Lemonade Drink 2.49 1
+303 IcedTea Drink 2.29 1
+304 Milkshake Drink 3.99 0
+
+401 Nuggets Snack 4.99 1
+402 ChickenWings Snack 6.99 1
+403 PopcornChicken Snack 5.49 1
+
+501 IceCream Dessert 2.49 1
+502 Brownie Dessert 3.99 1
+503 Donut Dessert 1.99 0
+
+601 Combo1 Combo 8.99 1
+602 Combo2 Combo 9.99 1
+603 KidsMeal Combo 6.49 1
