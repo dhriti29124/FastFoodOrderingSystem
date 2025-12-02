@@ -18,9 +18,9 @@ typedef struct {
 
 void addMenuItem();
 void listMenuItems();
-void searchMenuItemByID(int searchID);
+void searchMenuItemByID();
 
-
+// not my part 
 void placeOrder();
 void updateInventory();
 void generateSalesReport();
