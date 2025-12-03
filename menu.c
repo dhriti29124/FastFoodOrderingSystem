@@ -4,14 +4,15 @@
 #include "fastfood.h"
 
 void addMenuItem() {
-  MenuItem item;
-  FILE *fp = fopen ("menu.txt","a"); 
+    MenuItem item;
+    FILE *fp = fopen(MENU_FILE, "a");
 
-  if (fp== NULL){
-    printf("Error opening the menu file!\n");
-    return;
-  }
-  printf("Enter Item ID: ");
+    if (fp == NULL) {
+        printf("Error opening the menu file!\n");
+        return;
+    }
+
+    printf("Enter Item ID: ");
     scanf("%d", &item.itemID);
 
     printf("Enter Item Name: ");
@@ -26,19 +27,19 @@ void addMenuItem() {
     printf("Is Available? (1 = Yes, 0 = No): ");
     scanf("%d", &item.isAvailable);
 
-fprintf(fp, "%d %s %s %.2f %d\n",
-        item.itemID, item.name, item.category, item.price, item.isAvailable);
+    fprintf(fp, "%d %s %s %.2f %d\n",
+            item.itemID, item.name, item.category, item.price, item.isAvailable);
 
-  fclose(fp);
+    fclose(fp);
 
-  printf("Menu item added successfully!\n");
+    printf("Menu item added successfully!\n");
 }
-  
-}
+
+
+
 void listMenuItems() {
-  
     MenuItem item;
-    FILE *fp = fopen("menu.txt", "r");
+    FILE *fp = fopen(MENU_FILE, "r");
 
     if (fp == NULL) {
         printf("Menu file not found! Please add items first.\n");
@@ -47,8 +48,9 @@ void listMenuItems() {
 
     printf("\n----- MENU ITEMS -----\n");
 
-    while (fscanf(fp, "%d %s %s %f %d",
-                  &item.itemID, item.name, item.category, &item.price, &item.isAvailable) == 5) {
+    while (fscanf(fp, "%d %49s %19s %f %d",
+                  &item.itemID, item.name, item.category,
+                  &item.price, &item.isAvailable) == 5) {
 
         printf("ID: %d | Name: %s | Category: %s | Price: %.2f | Available: %s\n",
                item.itemID,
@@ -62,6 +64,7 @@ void listMenuItems() {
 }
 
 
+
 void searchMenuItemByID() {
     int id;
     int found = 0;
@@ -70,15 +73,16 @@ void searchMenuItemByID() {
     printf("Enter Item ID to search: ");
     scanf("%d", &id);
 
-    FILE *fp = fopen("menu.txt", "r");
+    FILE *fp = fopen(MENU_FILE, "r");
 
     if (fp == NULL) {
         printf("Menu file not found!\n");
         return;
     }
 
-    while (fscanf(fp, "%d %s %s %f %d",
-                  &item.itemID, item.name, item.category, &item.price, &item.isAvailable) == 5) {
+    while (fscanf(fp, "%d %49s %19s %f %d",
+                  &item.itemID, item.name, item.category,
+                  &item.price, &item.isAvailable) == 5) {
 
         if (item.itemID == id) {
             printf("\n----- ITEM FOUND -----\n");
@@ -93,9 +97,8 @@ void searchMenuItemByID() {
     }
 
     if (!found) {
-        printf("Item with ID %d NOT FOUND in the menu.\n", id);
+        printf("Item with ID %d NOT FOUND.\n", id);
     }
 
     fclose(fp);
 }
-
