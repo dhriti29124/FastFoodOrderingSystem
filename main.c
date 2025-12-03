@@ -9,6 +9,9 @@ int main() {
         printf("1. Add New Menu Item\n");
         printf("2. List All Menu Items\n");
         printf("3. Search Menu Item by ID\n");
+        printf("4. Place Order\n");
+        printf("5. Update Inventory\n");
+        printf("6. Generate Sales Report\n");
         printf("0. Exit\n");
 
         printf("Enter your choice: ");
@@ -26,6 +29,18 @@ int main() {
 
             case 3:
                 searchMenuItemByID();
+                break;
+
+            case 4:
+                placeOrder();
+                break;
+
+            case 5:
+                updateInventory();
+                break;
+
+            case 6:
+                generateSalesReport();
                 break;
 
             case 0:
