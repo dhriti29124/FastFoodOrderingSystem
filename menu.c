@@ -26,8 +26,9 @@ void addMenuItem() {
     printf("Is Available? (1 = Yes, 0 = No): ");
     scanf("%d", &item.isAvailable);
 
-  fprintf(fp, %d %s %s %.2f %d\n"
-         item.itemID, item.name, item.category, item.price, item.isAvailable);
+fprintf(fp, "%d %s %s %.2f %d\n",
+        item.itemID, item.name, item.category, item.price, item.isAvailable);
+
   fclose(fp);
 
   printf("Menu item added successfully!\n");
