@@ -19,10 +19,10 @@ void addMenuItem() {
     scanf("%d", &item.itemID);
 
     printf("Enter Item Name: ");
-    scanf("%s", item.name);
+    scanf(" %[^\n]", item.name);   
 
     printf("Enter Category: ");
-    scanf("%s", item.category);
+    scanf(" %[^\n]", item.category); 
 
     printf("Enter Price: ");
     scanf("%f", &item.price);
